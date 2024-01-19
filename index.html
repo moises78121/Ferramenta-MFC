@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			background-color: #6F97C4;
+			font-size: 1.4vw;
+			font-family: monospace;
+			line-height: 1.5;
+		}
+		.container {
+			display: flex;
+			column-gap: 0.5vw;
+		}
+
+		.container #left {
+			background-color: #D9EDBF;
+			text-align: center;
+			overflow-y: scroll;
+			height: 95vh;
+			border-radius: 1vh;
+		}
+
+		.container #left button {
+			margin-top: 0.5vw;
+			margin-bottom: 0.5vw;
+			margin-left: 0.5vw;
+			margin-right: 0.5vw;
+			width: 14.5vw;
+			padding-top: 0.5vw;
+			padding-bottom: 0.5vw;
+
+			border-color: rgba(0, 0, 0, 0);
+			border-radius: 1vh;
+			background-color: #FFCF81;
+
+			cursor: pointer;
+			font-size: 1.3vw;
+			line-height: 1.3;
+		}
+
+		.container #right {
+			background-color: #FAEF9B;
+			width: 80vw;
+			border-radius: 1vh;
+		}
+
+		.container #right #PEC_content h1 {
+			padding-top: 0px;
+			padding-bottom: 0px;
+			margin: 0px;
+			padding-left: 2vw;
+		}
+
+		.container #right #PEC_content p {
+			padding-top: 0px;
+			padding-bottom: 0px;
+			margin: 0px;
+			padding-left: 4vw;
+			padding-right: 2vw;
+			text-align: left;
+		}
+
+		.container #right object {
+			display: none;
+			width: 98%;
+			height: 92vh;
+			padding-top: 2vh;
+			padding-bottom: 2vh;
+		}
+	</style>
+	<title>Ferramenta MFC</title>
+</head>
+<body>
+	<div class="container">
+		<div id="left">
+			<button onclick="showPEC_demanda_espontanea()">PEC Demanda Espontânea</button>
+			<br>
+			<button onclick="showPEC_pre_natal()">PEC Pré-Natal</button>
+			<br>
+			<button onclick="showPEC_puericultura()">PEC Puericultura</button>
+			<br>
+			<button onclick="showPEC_puerperio()">PEC Puerpério</button>
+			<br>
+			<button onclick="showGuiaFarmaceutico()">Guia Farmacêutico</button>
+			<br>
+			<button onclick="showCID_10()">CID-10</button>
+			<br>
+			<button onclick="showCIAP_2()">CIAP-2</button>
+			<br>
+			<button onclick="showSIGTAP()">Tabela SIGTAP</button>
+			<br>
+			<button onclick="showMRPA()">MRPA</button>
+			<br>
+			<button onclick="showReceitaSOSGestante()">Receita SOS Gestante</button>
+			<br>
+			<button onclick="showReceitaDengue()">Receita Dengue</button>
+		</div>
+
+		<div id="right">
+			<div id="PEC_content"></div>
+
+			<object data="./Files/nocontent.pdf" type="application/pdf" id="document_content">
+				<p>Unable to display PDF file. <a href="./Files/nocontent.pdf" id="document_content_path">Download</a> instead.</p>
+			</object>
+		</div>
+	</div>
+
+	<script>
+		function hideAll() {
+			document.getElementById("PEC_content").innerHTML = "";
+			document.getElementById("PEC_content").style.display = "none";
+
+			document.getElementById("document_content").setAttribute("data", "./Files/nocontent.pdf");
+			document.getElementById("document_content").style.display = "none";
+		}
+
+		function showPEC_demanda_espontanea() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "left";
+
+			document.getElementById("PEC_content").innerHTML = `
+				<br>
+				<h1>Subjetivo</h1>
+				<br>
+				<p>
+					ATENDIMENTO REALIZADO PELO ACADÊMICO<br><br>
+					RECEBO PACIENTE NA DEMANDA ESPONTÂNEA COM QP:<br>
+					HPP: NEGA ALERGIA MEDICAMENTOSA, COMORBIDADES, MUC;<br>
+					NEGA ETILISMO E TABAGISMO.<hr>
+				</p>
+				<h1>Objetivo</h1>
+				<br>
+				<p>
+					COVID:<br>
+					INFLUENZA:<br>
+					EXAME FÍSICO:<br><br>
+					BEG, BEN, LOTE, AAA, CORADA, HIDRATADA, EUPNEICA E EUCÁRDIAOCA<br>
+					OROSCOPIA: MUCOSA NORMOCORADA, AUSENCIA DE PLACAS, EDEMA E HIPEREMIA<br>
+					OTOSCOPIA: MEMBRANA TIMPÂNICA TRANSLÚCIDA, AUSÊNCIA DE ABAULAMENTO , HIPEREMIA<br>
+					ACV: RCR, BCNF EM 2T, S/SOPROS<br>
+					AR: MV+, S/ RA<br>
+					ABD: FLÁCIDO, RHA +, INDOLOR A PALPAÇÃO SUPERFICIAL E PROFUNDA, AUSÊNCIA DE VCM E MASSAS PALPÁVEIS, DB-;<br>
+					EXTREMIDADES: PULSOS PRESENTES, AMPLOS E SIMÉTRICOS, TEC &lt; 3 SEG<br>
+					NEURO: GLASGOW 15, PUPILAS ISOFOTORREAGENTES.<br><br>
+					DU: SEM QUEIXAS<br>
+					TV: NI<hr>
+				</p>
+				<h1>Avaliação</h1>
+				<br>
+				<p>
+					SINAIS E SINTOMAS SUGESTIVOS DE<hr>
+				</p>
+				<h1>Plano</h1>
+				<br>
+				<p>
+					- ORIENTAÇÕES GERAIS E SINAIS DE ALARME;<br>
+					- ORIENTO RETORNO SE PERSISTÊNCIA OU SURGIMENTO DE NOVOS SINTOMAS.
+				</p>
+				<br>
+			`;
+			document.getElementById("PEC_content").style.display = "inline";
+		}
+
+		function showPEC_pre_natal() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "left";
+
+			document.getElementById("PEC_content").innerHTML = `
+				<br>
+				<h1>Subjetivo</h1>
+				<br>
+				<p>
+					ATENDIMENTO REALIZADO PELO ACADÊMICO<br><br>
+					GESTANTE COMPARECE A UNIDADE PARA ACOMPANHAMENTO DE PRÉ-NATAL;<br>
+					RELATA:<br>
+					BOA MOVIMENTAÇÃO FETAL E ACEITAÇÃO ALIMENTAR<br>
+					=> HDA: GESTANTE ASSINTOMÁTICA, NEGA SANGRAMENTOS, CORRIMENTO VAGINAL, PERDA DE LÍQUIDOS, QUEIXAS URINÁRIAS, ALTERAÇÕES INTESTINAIS.<br>
+					RN?<br>
+					TRABALHA FORA DE CASA:<br>
+					HOP:<br>
+					GPA<br>
+					IG - DUM S+D - DPP | USG S+D (USGTV - S +D) - DPP<br>
+					TS:<br>
+					SOROLOGIAS NÃO REAGENTE, IMUNE Á TOXOPLASMOSE, RUBÉOLA, CITOMEGALOVÍRUS, CHAGAS.<br>
+					=> HPP: NEGA TABAGISMO, ETILISMO, COMORBIDADES, MUC, E ALERGIAS;<br>
+					=> CIRURGIAS PRÉVIAS:<br>
+					=> FEZ USO DO ÁCIDO FÓLICO ATÉ A 12ª SEMANA DE GESTAÇÃO<br>
+					=> EM USO<br>
+					=> HF:<br>
+					=> AFIRMA/NEGA COMPARECIMENTO EM CONSULTA ODONTOLÓGICA -<br><br>
+					*MOTIVO DA CONSULTA<br>
+					=> A98 MEDICINA PREVENTIVA/MANUTENÇÃO DA SAÚDE<br>
+					=> W78 GRAVIDEZ<br>
+					=> 49 OUTROS PROCEDIMENTOS PREVENTIVOS<hr>
+				</p>
+				<h1>Objetivo</h1>
+				<br>
+				<p>
+					COVID:<br>
+					INFLUENZA:<br>
+					EXAME FÍSICO:<br><br>
+					BEG, BEN, LOTE, AAA, CORADA, HIDRATADA, EUPNEICA E EUCÁRDIAOCA<br>
+					OROSCOPIA: MUCOSA NORMOCORADA, AUSENCIA DE PLACAS, EDEMA E HIPEREMIA<br>
+					OTOSCOPIA: MEMBRANA TIMPÂNICA TRANSLÚCIDA, AUSÊNCIA DE ABAULAMENTO , HIPEREMIA<br>
+					ACV: RCR, BCNF EM 2T, S/SOPROS<br>
+					AR: MV+, S/ RA<br>
+					ABD: FLÁCIDO, RHA +, INDOLOR A PALPAÇÃO SUPERFICIAL E PROFUNDA, AUSÊNCIA DE VCM E MASSAS PALPÁVEIS, DB-;<br>
+					EXTREMIDADES: PULSOS PRESENTES, AMPLOS E SIMÉTRICOS, TEC &lt; 3 SEG<br>
+					NEURO: GLASGOW 15, PUPILAS ISOFOTORREAGENTES.<br><br>
+					DU: SEM QUEIXAS<br>
+					TV: NI<hr>
+				</p>
+				<h1>Avaliação</h1>
+				<br>
+				<p>
+					SINAIS E SINTOMAS SUGESTIVOS DE<hr>
+				</p>
+				<h1>Plano</h1>
+				<br>
+				<p>
+					- ORIENTAÇÕES GERAIS E SINAIS DE ALARME;<br>
+					- ORIENTO RETORNO SE PERSISTÊNCIA OU SURGIMENTO DE NOVOS SINTOMAS.
+				</p>
+				<br>
+			`;
+			document.getElementById("PEC_content").style.display = "inline";
+		}
+
+		function showPEC_puericultura() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "left";
+
+			document.getElementById("PEC_content").innerHTML = `
+			<br>
+				<h1>Subjetivo</h1>
+				<br>
+				<p>
+					ATENDIMENTO REALIZADO PELO ACADÊMICO<br><br>
+					CONSULTA AGENDADA PARA CUIDADO CONTINUADO/PROGRAMADO DE PUERICULTURA DO LACTENTE ACOMPANHADO(A) ... CUJO DATA DE NASCIMENTO É ... RELATADA NO PRONTUÁRIO DA MÃE, POIS O MESMO AINDA NÃO POSSUI CNS.<br>
+					RESPONSÁVEL PELO LACTENTE RELATA QUEIXA:<br>
+					NEGA QUEIXAS E ACIDENTES DOMÉSTICOS;<br>
+					REALIZAÇÃO DE LAVAGEM NASAL COM SORO FISIOLÓGICO;<br>
+					REALIZAÇÃO DE HIGIENE BUCAL DO LACTENTE;<br>
+					QUEDA DO COTO UMBILICAL APÓS … DIAS DO NASCIMENTO. NEGA ALTERAÇÕES;<br>
+					BOM PADRÃO DE SONO NOTURNO E DIURNO;<br>
+					POSIÇÃO NO SONO QUANDO DEITADO NO BERÇO DE BARRIGA PARA CIMA E CABEÇA LATERALIZADA;<br>
+					ALEITAMENTO MATERNO EXCLUSIVO E PEGA MAMÁRIA SATISFATÓRIA;<br>
+					ALEITAMENTO MATERNO E LEITE ARTIFICIAL ...;<br>
+					LEITE ARTIFICIAL …;<br>
+					FUNCIONAMENTO DO INTESTINO E FISIOLÓGICOS ADEQUADOS E CÓLICAS COM MENOS FREQUÊNCIA/NEGA CÓLICAS ;<br>
+					HIGIENE E CUIDADOS GERAIS: ;<br>
+					EM USO DE: ;<br><br>
+					Motivo da consulta<br>
+					Medicina preventiva / manutenção da saúdeConsulta agendada para cuidado continuado/programado de puericultura do Lactente.<hr>
+				</p>
+				<h1>Objetivo</h1>
+				<br>
+				<p>
+					Registro ao nascer: tipo de parto..., IG S+D, comprimento cm, perímetro cefálico cm, perímetro torácico cm, perímetro abdominal cm, peso g, apgar 1' , apgar 5' .<br>
+					Peso alta g.<br>
+					Foi realizado:<br>
+					Teste do coraçãozinho -<br>
+					MSD: SAT / FC bpm<br>
+					MID: SAT / FC bpm<br>
+					Teste do pezinho -<br>
+					TSH NEONATAL uU/mL<br>
+					FENILALANINA (PKU) mg/dL<br>
+					17OHP NEONATAL ng/mL<br>
+					IRT NEONATAL ng/mL<br>
+					HEMOGLOBINOPATIAS<br>
+					BIOTINIDASE NEONATAL<br>
+					TOXOPLASMOSE IGM NEONATAL<br>
+					Teste do olhinho -<br>
+					Teste da orelhinha -<br>
+					RN apresenta:<br>
+					Vacinas de acordo com o calendário;<br>
+					Peso: g<br>
+					Comprimento: cm<br>
+					Perímetro cefálico: cm<br>
+					Perímetro torácico: cm<br>
+					Perímetro abdominal: cm<br>
+					Perímetro da panturrilha: cm<br>
+					Temperatura: C°<br>
+					Frequência cardíaca: BPM<br>
+					Frequência respiratória: MPM<br>
+					Alterações fenotípicas ausentes;<br>
+					Fatores de risco ausentes;<br>
+					Marcos adequados para idade / alerta para o desenvolvimento / provável atraso no desenvolvimento;<br>
+					REGISTRO AO NASCER: PERÍMETRO TORÁCICO CM, PERÍMETRO ABDOMINAL CM;<br>
+					PESO DA ALTA G;<br>
+					BEG, BEN, AAA, CORADO E HIDRATADO;<br>
+					OROSCOPIA: MUCOSA NORMOCORADA, AUSENCIA DE PLACAS, EDEMA E HIPEREMIA;<br>
+					ACV: RCR, BCNF EM 2T, S/ SOPROS;<br>
+					AR: MV+, S/ RA;<br>
+					PERÍMETRO TORÁCICO: CM<br>
+					ABD: FLÁCIDO, RHA +, INDOLOR A PALPAÇÃO SUPERFICIAL E PROFUNDA, AUSENCIA DE VCM E MASSAS PALPÁVEIS, DB-;<br>
+					EXTREMIDADES: TEC < 3 SEG;<br>
+					CABEÇA: ÍNTEGRA, SEM RETRAÇÃO OU ABAULAMENTO;<br>
+					FONTANELAS: ÍNTEGRA, NORMOTENSA;<br>
+					ABERTURA OCULAR NORMAL, PUPILAS NORMAIS, NÃO APRESENTA ESTRABISMO, SEGUE COM O OLHAR;<br>
+					LÍNGUA E FRÊNULO SEM ALTERAÇÕES E MOVIMENTAÇÃO ADEQUADA;<br>
+					PESCOÇO ÍNTEGRO, LINFONODOS NÃO PALPÁVEIS;<br>
+					PEGA MAMÁRIA SATISFATÓRIA;<br>
+					UMBIGO: ÍNTEGRO, SEM ALTERAÇÕES;<br>
+					GENITÁLIA: ÍNTEGRA, CORADA, HIDRATADA, PREPÚCIO LEVEMENTE RETRÁTIL.<br>
+					TESTÍCULOS TÓPICOS E FIMOSE FISIOLÓGICA;<br>
+					TESTÍCULOS SIMÉTRICOS OU DISCRETAMENTE ASSIMÉTRICOS NA BOLSA ESCROTAL;<br>
+					TESTÍCULOS AUSENTES EM BOLSA ESCROTAL, ENCONTRA-SE EM REGIÃO PÉLVICA;<br>
+					GENITÁLIA: ÍNTEGRA, CORADA, HIDRATADA. CLITÓRIS, PEQUENOS E GRANDES LÁBIOS IGUALMENTE DESENVOLVIDOS. SEM ALTERAÇÕES;<br>
+					NÃO APRESENTA SINAIS DE ALERTA;<br>
+					APRESENTA COMO SINAIS DE ALERTA: ;<br>
+					HIGIENE E CUIDADOS GERAIS ...;<br>
+					NÃO APRESENTA SINAIS DE VIOLÊNCIA/NEGLIGÊNCIAS;<br>
+					FOI OBSERVADO LAÇO AFETIVO SATISFATÓRIO DURANTE A CONSULTA.<hr>
+				</p>
+				<h1>Avaliação</h1>
+				<br>
+				<p>
+					DESENVOLVIMENTO FÍSICO, MOTOR, DADOS ANTROPOMÉTRICOS E SSVV DENTRO DOS PADRÕES ESPERADOS PARA A IDADE.<br>
+					Problema e / ou condição detectada<br><br>
+					Medicina preventiva / manutenção da saúde – A98<hr>
+				</p>
+				<h1>Plano</h1>
+				<br>
+				<p>
+					=> CHECO:<br>
+					TESTE DO CORAÇÃOZINHO;<br>
+					TESTE DO PEZINHO;<br>
+					TESTE DA ORELHINHA;<br>
+					TESTE DO OLHINHO;<br>
+					=> AGUARDO RESULTADO:<br>
+					TESTE DO CORAÇÃOZINHO;<br>
+					TESTE DO PEZINHO;<br>
+					TESTE DA ORELHINHA;<br>
+					TESTE DO OLHINHO;<br>
+					=> RESPONSÁVEL POR LACTENTE ORIENTADA:<br>
+					SOBRE REALIZAÇÃO DE LAVAGEM NASAL COM SORO FISIOLÓGICO;<br>
+					SOBRE POSIÇÃO NO SONO QUANDO DEITADO NO BERÇO DE BARRIGA PARA CIMA E CABEÇA LATERALIZADA;<br>
+					SOBRE SAÚDE E HIGIENE BUCAL DO LACTENTE;<br>
+					SOBRE IMPORTÂNCIA DA VACINAÇÃO;<br>
+					MEDIDAS DE PREVENÇÃO AO COVID-19 E MOSQUITO AEDES AEGYPTI;<br>
+					QUE CONTINUE ESTIMULANDO O LACTENTE;<br>
+					SOBRE ORIENTAÇÕES GERAIS E OS SINAIS DE ALERTA PARA RETORNO ANTECIPADO;<br>
+					QUE RETORNE PARA CONSULTA AGENDADA COM MÉDICO INTERCALADO COM ENFERMEIRO PARA CUIDADO CONTINUADO/PROGRAMADO.<br>
+					Conduta:<br>
+					Retorno para cuidado continuado / programado
+				</p>
+				<br>
+			`;
+			document.getElementById("PEC_content").style.display = "inline";
+		}
+
+		function showPEC_puerperio() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "left";
+
+			document.getElementById("PEC_content").innerHTML = `
+				<br>
+				<h1>Subjetivo</h1>
+				<br>
+				<p>
+					PUÉRPERA COMPARECE À UNIDADE PARA CONSULTA DE PUERPÉRIO DE PARTO NORMAL/CESÁRIA COM IG S + D<br>
+					HDA: ASSINTOMÁTICA, NEGA SANGRAMENTOS, CORRIMENTO VAGINAL, PERDA DE LÍQUIDOS, QUEIXAS URINÁRIAS; ALTERAÇÕES INTESTINAIS. CARACTERÍSTICAS DO SANGRAMENTO SIC: VERMELHO ESCURO COM CONSISTÊNCIA ESPESSA E QUE, AS VEZES, APRESENTA COÁGULOS DE SANGUE.<br>
+					HPP:<br>
+					MEDICAMENTOS EM USO CPM:<br><br>
+					*MOTIVO DA CONSULTA<br>
+					=> A98 MEDICINA PREVENTIVA/MANUTENÇÃO DA SAUDE<br>
+					=> W90 PARTO SEM COMPLICAÇÕES DE NASCIDO VIVO<hr>
+				</p>
+				<h1>Objetivo</h1>
+				<br>
+				<p>
+					=> BEG, BEN, LOTE, AAA, CORADA, HIDRATADA, EUPNEICA E EUCÁRDICA<br>
+					=> MV+S/RA | BNRNF EM 2T S/SOPROS<br>
+					=> MAMAS DENTRO DA NORMALIDADE;<br>
+					=> INVOLUÇÃO UTERINA ADEQUADA;<br>
+					=> FOP: APRESENTA CICATRIZAÇÃO ADEQUADA SEM SINAIS FLOGÍSTICOS.<hr>
+				</p>
+				<h1>Avaliação</h1>
+				<br>
+				<p>
+					PUERPÉRIO NÃO APRESENTA SINAIS E SINTOMAS DE COMPLICAÇÕES<hr>
+				</p>
+				<h1>Plano</h1>
+				<br>
+				<p>
+					=> ORIENTO:<br>
+					QUANTO A CONTRAÇÃO DO ÚTERO SER ACELERADA PELA AMAMENTAÇÃO – O QUE É POSITIVO – E PODE SER ACOMPANHADA POR CÓLICAS E PEQUENOS SANGRAMENTOS NO PÓS PARTO, CUJO NOME TÉCNICO É LÓQUIO, É NORMAL E DURA EM MÉDIA 5 SEMANAS, SENDO CARACTERIZADO PELA SAÍDA DE SANGUE VERMELHO ESCURO COM CONSISTÊNCIA ESPESSA E QUE, POR VEZES, APRESENTA COÁGULOS DE SANGUE;<br>
+					EM CASO DE SANGRAMENTO EXAGERADO E DOR INTENSA SE ENCAMINHAR PARA O PRONTO ATENDIMENTO;<br>
+					QUANTO AOS SINAIS E SINTOMAS FLOGÍSTICO DE INFECÇÃO/INFLAMAÇÃO;<br>
+					IMPORTÂNCIA DA INGESTA HÍDRICA E ALIMENTAÇÃO SAUDÁVEL;<br>
+					MEDICAS DE PREVENÇÃO AO COVID-19 E MOSQUITO AEDES AEGYPTI;<br>
+					ORIENTAÇÕES GERAIS;<br>
+					RETORNO COM RESULTADO DE EXAMES;<br>
+					=> SOLICITO:<br>
+					EXAMES LABORATORIAIS;<br>
+					=> PRESCREVO:<br>
+					USO ORAL DE SULFATO FERROSO 40MG - 01 COMPRIMIDO AO DIA 30 MIN ANTES DO ALMOÇO COM SUCO DE LARANJA OU LIMÃO, FAZER USO ATÉ 3 MESES APÓS A GESTAÇÃO;<br>
+					=> FORNEÇO CPM 01 CX DE AMOSTRA GRÁTIS DE PÉROLA - TOMAR 01 CP AO DIA NO MESMO HORÁRIO SEM PAUSA;<br>
+					=> SOLICITO IMPLANON PARA DEPARTAMENTO RESPONSÁVEL.<br>
+				</p>
+				<br>
+			`;
+			document.getElementById("PEC_content").style.display = "inline";
+		}
+
+		function showGuiaFarmaceutico() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "center";
+			document.getElementById("right").style.alignItems = "center";
+			document.getElementById("document_content").setAttribute("data", "./Files/guia-farmacêutico.pdf");
+			document.getElementById("document_content_path").setAttribute("href", "./Files/guia-farmacêutico.pdf");
+			document.getElementById("document_content").style.display = "inline";
+		}
+
+		function showCID_10() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "center";
+			document.getElementById("right").style.alignItems = "center";
+			document.getElementById("document_content").setAttribute("data", "./Files/CID-10.pdf");
+			document.getElementById("document_content_path").setAttribute("href", "./Files/CID-10.pdf");
+			document.getElementById("document_content").style.display = "inline";
+		}
+
+		function showCIAP_2() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "center";
+			document.getElementById("right").style.alignItems = "center";
+			document.getElementById("document_content").setAttribute("data", "./Files/CIAP-2.pdf");
+			document.getElementById("document_content_path").setAttribute("href", "./Files/CIAP-2.pdf");
+			document.getElementById("document_content").style.display = "inline";
+		}
+
+		function showSIGTAP() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "center";
+			document.getElementById("right").style.alignItems = "center";
+			document.getElementById("document_content").setAttribute("data", "./Files/SIGTAP.pdf");
+			document.getElementById("document_content_path").setAttribute("href", "./Files/SIGTAP.pdf");
+			document.getElementById("document_content").style.display = "inline";
+		}
+
+		function showMRPA() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "center";
+			document.getElementById("right").style.alignItems = "center";
+			document.getElementById("document_content").setAttribute("data", "./Files/MRPA.pdf");
+			document.getElementById("document_content_path").setAttribute("href", "./Files/MRPA.pdf");
+			document.getElementById("document_content").style.display = "inline";
+		}
+
+		function showReceitaSOSGestante() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "left";
+
+			document.getElementById("PEC_content").innerHTML = `
+				<br>
+				<h1>Uso oral:</h1>
+				<br>
+				<ol>
+					<li>
+						DRAMIN___________________________________01 CAIXA
+						<br>
+						TOMAR 01 CP DE 08/08 HORAS, SE SENTIR NÁUSEAS OU VÔMITOS.
+					</li>
+					<br>
+					<li>
+						PARACETAMOL 500 MG_______________________01 CAIXA
+						<br>
+						TOMAR 01 CP DE 06/06 HORAS, SE DOR /FEBRE.
+					</li>
+					<br>
+					<li>
+						BUSCOPAN SIMPLES_________________________01 CAIXA
+						<br>
+						TOMAR 01 CP DE 08/08 HORAS, SE CÓLICA.
+					</li>
+					<br>
+					<li>
+						SIMECO PLUS _____________________________01 FRASCO
+						<br>
+						TOMAR 10 ML DE 08/08 HORAS, SE QUEIMAÇÃO.
+					</li>
+					<br>
+					<li>
+						SULFATO FERROSO 40MG ____________________CONTÍNUO
+						<br>
+						TOMAR 01 CP AO DIA ATE 3 MESES APÓS A GESTAÇÃO.
+					</li>
+				</ol>
+			`;
+			document.getElementById("PEC_content").style.display = "inline";
+		}
+
+		function showReceitaDengue() {
+			hideAll();
+			document.getElementById("right").style.textAlign = "left";
+
+			document.getElementById("PEC_content").innerHTML = `
+				<br>
+				<h1>Uso oral:</h1>
+				<br>
+				<ol>
+					<li>
+						ONDANSETRONA, CLORIDRATO 8MG_____________01 CAIXA
+						<br>
+						TOMAR 01 CP DE 08/08 HORAS, SE SENTIR NÁUSEAS OU VÔMITOS.
+					</li>
+					<br>
+					<li>
+						SRO 27,9G________________________________10 SACHÊS
+						<br>
+						DILUIR 2 SANCHES EM 2 LITROS DE ÁGUA FILTRADA OU FERVIDA. TOMAR 1 LITRO E 300 ML DURANTE TODO O DIA. DURANTE 5 DIAS.
+					</li>
+					<br>
+					<li>
+						DIPIRONA SÓDICA 1G_______________________01 CAIXA
+						<br>
+						TOMAR 01 CP DE 08/08 HORAS, SE DOR OU FEBRE.
+					</li>
+					<br>
+					<li>
+						RECOMENDAÇÕES:
+						<br>
+						TOMAR DURANTE O DIA 2,5 L DE LÍQUIDOS (ÁGUA, SUCO OU ÁGUA DE COCO) DURANTE 5 DIAS.
+					</li>
+				</ol>
+			`;
+			document.getElementById("PEC_content").style.display = "inline";
+		}
+	</script>
+</body>
+</html>
