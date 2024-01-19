@@ -77,27 +77,31 @@
 <body>
 	<div class="container">
 		<div id="left">
-			<button onclick="showPEC_demanda_espontanea()">PEC Demanda Espontânea</button>
+			<button id="button_PEC_demanda_espontanea" onclick="showPEC_demanda_espontanea()">PEC Demanda Espontânea</button>
 			<br>
-			<button onclick="showPEC_pre_natal()">PEC Pré-Natal</button>
+			<button id="button_PEC_pre_natal" onclick="showPEC_pre_natal()">PEC Pré-Natal</button>
 			<br>
-			<button onclick="showPEC_puericultura()">PEC Puericultura</button>
+			<button id="button_PEC_puericultura" onclick="showPEC_puericultura()">PEC Puericultura</button>
 			<br>
-			<button onclick="showPEC_puerperio()">PEC Puerpério</button>
+			<button id="button_PEC_puerperio" onclick="showPEC_puerperio()">PEC Puerpério</button>
 			<br>
-			<button onclick="showGuiaFarmaceutico()">Guia Farmacêutico</button>
+			<button id="button_GuiaFarmaceutico" onclick="showGuiaFarmaceutico()">Guia Farmacêutico</button>
 			<br>
-			<button onclick="showCID_10()">CID-10</button>
+			<button id="button_CID_10" onclick="showCID_10()">CID-10</button>
 			<br>
-			<button onclick="showCIAP_2()">CIAP-2</button>
+			<button id="button_CIAP_2" onclick="showCIAP_2()">CIAP-2</button>
 			<br>
-			<button onclick="showSIGTAP()">Tabela SIGTAP</button>
+			<button id="button_SIGTAP" onclick="showSIGTAP()">Tabela SIGTAP</button>
 			<br>
-			<button onclick="showMRPA()">MRPA</button>
+			<button id="button_MRPA" onclick="showMRPA()">MRPA</button>
 			<br>
-			<button onclick="showReceitaSOSGestante()">Receita SOS Gestante</button>
+			<button id="button_ReceitaSOSGestante" onclick="showReceitaSOSGestante()">Receita SOS Gestante</button>
 			<br>
-			<button onclick="showReceitaDengue()">Receita Dengue</button>
+			<button id="button_ReceitaDengue" onclick="showReceitaDengue()">Receita Dengue</button>
+			<br>
+			<button onclick="redirect('https\:\/\/www.fetalmed.net\/calculadora\/calculadora-idade-gestacional\/')">Calculadora Idade Gestacional</button>
+			<br>
+			<button onclick="redirect('https\:\/\/pedajuda.com.br\/')">PedAjuda</button>
 		</div>
 
 		<div id="right">
@@ -116,11 +120,24 @@
 
 			document.getElementById("document_content").setAttribute("data", "./Files/nocontent.pdf");
 			document.getElementById("document_content").style.display = "none";
+
+			document.getElementById("button_PEC_demanda_espontanea").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_PEC_pre_natal").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_PEC_puericultura").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_PEC_puerperio").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_GuiaFarmaceutico").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_CID_10").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_CIAP_2").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_SIGTAP").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_MRPA").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_ReceitaSOSGestante").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_ReceitaDengue").style.backgroundColor = "#FFCF81";
 		}
 
 		function showPEC_demanda_espontanea() {
 			hideAll();
 			document.getElementById("right").style.textAlign = "left";
+			document.getElementById("button_PEC_demanda_espontanea").style.backgroundColor = "#6F97C4";
 
 			document.getElementById("PEC_content").innerHTML = `
 				<br>
@@ -173,6 +190,7 @@
 		function showPEC_pre_natal() {
 			hideAll();
 			document.getElementById("right").style.textAlign = "left";
+			document.getElementById("button_PEC_pre_natal").style.backgroundColor = "#6F97C4";
 
 			document.getElementById("PEC_content").innerHTML = `
 				<br>
@@ -205,9 +223,7 @@
 				<h1>Objetivo</h1>
 				<br>
 				<p>
-					COVID:<br>
-					INFLUENZA:<br>
-					EXAME FÍSICO:<br><br>
+					=> AO EXAME FÍSICO:<br><br>
 					BEG, BEN, LOTE, AAA, CORADA, HIDRATADA, EUPNEICA E EUCÁRDIAOCA<br>
 					OROSCOPIA: MUCOSA NORMOCORADA, AUSENCIA DE PLACAS, EDEMA E HIPEREMIA<br>
 					OTOSCOPIA: MEMBRANA TIMPÂNICA TRANSLÚCIDA, AUSÊNCIA DE ABAULAMENTO , HIPEREMIA<br>
@@ -217,7 +233,81 @@
 					EXTREMIDADES: PULSOS PRESENTES, AMPLOS E SIMÉTRICOS, TEC &lt; 3 SEG<br>
 					NEURO: GLASGOW 15, PUPILAS ISOFOTORREAGENTES.<br><br>
 					DU: SEM QUEIXAS<br>
-					TV: NI<hr>
+					TV: NI<br><br>
+					=> EXAMES COMPLEMENTARES:<br>
+					-USG TRANSVAGINAL: PRESENÇA DE SACO GESTACIONAL NORMO-INSERIDO, COM FORMA REGULAR, MEDINDO: LONG.: ,00 MM X ANT. POST.: ,00 MM X TRANS.: ,00 MM. EMBRIÃO PRESENTE, BCF BPM, CCN MEDINDO ,00 MM; HD: GRAVIDEZ TÓPICA, ÚNICA, S + D.<br>
+					-USG OBSTÉTRICA: FETO EM APRESENTAÇÃO CEFÁLICA, MF +, BCF BPM, PESO PROVÁVEL G, ESTATURA CM; PLACENTA POSTERIOR, GRAU ; LÍQUIDO AMNIÓTICO NORMAL; HD: GRAVIDEZ TÓPICA, ÚNICA.<br>
+					-USG - MORFOLÓGICO: FETO EM APRESENTAÇÃO CEFÁLICA, DORSO Á DIREITA, CRÂNIO FETAL E S.N.C.: VISUALIZADOS, DENTRO DA NORMALIDADE, DIÂMETRO BIPARIETAL DE MM, DIÂMETRO OCCIPTO-FRONTAL DE MM, CIRCUNFERÊNCIA CRANIANA COM MM, DIÂMETRO TRANSVERSAL CEREBELAR DE MM, FACE FETAL: VISUALIZADA, DENTRO DA NORMALIDADE, DISTÂNCIA INTER-ORBITÁRIA EXTERNA DE MM, PESCOÇO FETAL: VISUALIZADO, DENTRO DA NORMALIDADE, COLUNA FETAL: VISUALIZADA, DENTRO DA NORMALIDADE, TÓRAX: VISUALIZADO, DENTRO DA NORMALIDADE, CORAÇÃO: VISUALIZADO, DENTRO DA NORMALIDADE, BCF BPM, ABDOME FETAL: VISUALIZADO, DENTRO DA NORMALIDADE, CIRCUNFERÊNCIA ABDOMINAL MM, VIAS URINÁRIAS: VISUALIZADAS, DENTRO DA NORMALIDADE, MEMBROS FETAIS: VISUALIZADAS, DENTRO DA NORMALIDADE, SEXO FETAL PROVÁVEL: MASCULINO, ESTATURA FETAL:, PESO FETAL ESTIMADO: GRAMAS, PLACENTA: ANTERIOR, GRAU, LÍQUIDO AMNIÓTICO NORMAL, HD: GRAVIDEZ TÓPICA, ÚNICA, S + D.<br>
+					ESTUDO MORFOLÓGICO FETAL NORMAL<br>
+					BIOMETRIA E RELAÇÕES BIOMÉTRICAS FETAIS NORMAIS<br>
+					AUSÊNCIA DE MARCADORES ECOGRÁFICOS DE CROMOSSOMAPATIAS<br>
+					FETO EM SITUAÇÃO LONGITUDINAL, APRESENTAÇÃO CEFÁLICA.<br>
+					DORSO A ESQUERDA, MOVIMENTOS PRESENTES, BCF 142 BPM<br>
+					PESO PROVAVEL 532G<br>
+					ESTATURA 30,8CM<br>
+					PLACENTA TÓPICA POSTERIOR COM TEXTURA HOMOGÊNEA E MATURIDADE GRAU 0<br>
+					CORDÃO NORMAL<br>
+					CANAL NORMAL<br>
+					HD: GRAVIDEZ UNICA DE 23 SEMANAS<br>
+					-EXAMES LABORATORIAIS<br>
+					AGUARDO RESULTADOS<br>
+					=>HEMOGRAMA:<br>
+					HEMOGLOBINA g/dl<br>
+					HEMATÓCRITO %<br>
+					LEUCÓCITOS % mm3<br>
+					BASTONETES % mm3<br>
+					SEGMENTADOS % mm3<br>
+					LINFÓCITOS % mm3<br>
+					PLAQUETAS /mm3;<br>
+					=> GLICEMIA DE JEJUM: mg/dl<br>
+					=> CURVA GLICÊMICA:<br>
+					AMOSTRA DE JEJUM: mg/dl<br>
+					AMOSTRA DE 30 MINUTOS: mg/dl<br>
+					AMOSTRA DE 60 MINUTOS: mg/dl<br>
+					AMOSTRA DE 90 MINUTOS: mg/dl<br>
+					AMOSTRA DE 120 MINUTOS: mg/dl<br>
+					=> E.A.S.:<br>
+					COR<br>
+					ASPECTO<br>
+					DENSIDADE<br>
+					SUBST. LEUCOCITÁRIA<br>
+					ÁCIDO ASCÓRBICO<br>
+					CÉLULAS EPITELIAIS /ml<br>
+					LEUCÓCITOS /ml<br>
+					HEMÁCIAS /ml<br>
+					FLORA BACTERIANA<br>
+					CRISTAIS<br>
+					OBS. ;<br>
+					=> UROCULTURA:<br>
+					PESQUISA DE BACTÉRIAS:<br>
+					LEUCOCITÚRIA:<br>
+					CONTAGEM DE COLÔNIAS: UFC/ml<br>
+					GERME (S) ISOLADO (S): AUSÊNCIA DE CRESCIMENTO DE FLORA BACTERIANA<br>
+					AERÓBICA<br>
+					FLORA BACTERIANA ACENTUADA DE PADRÃO COCOBACILAR<br>
+					=> ANTIBIOGRAMA:<br>
+					BACTÉRIA ISOLADA: ESCHERICHIA COLI<br>
+					SENSÍVEL/RESISTÊNTE<br>
+					- AMICACINA<br>
+					-NORFLOXACINO<br>
+					-GENTAMICINA<br>
+					-CIPROFLOXACINO<br>
+					-CEFALEXINA<br>
+					-AMOXILINA/AC. CLAVULANATO<br>
+					-CEFEPIME<br>
+					-LEVOFLOXACINO<br>
+					-MEROPERÉM<br>
+					-CEFUROXINA<br>
+					-AMPICILINA<br>
+					-CEFTAZIDIMA<br>
+					-TRIMETOPRIM-SURF<br>
+					-NITROFURANTOINA<br>
+					-FOSFOMICINA<br>
+					-ÁCIDO NALIDÍXICO<br>
+					-IMIPENEM<br>
+					-OFLOXACINO<br>
+					-SULFAMETOXAZOL+TRIMETOPRIM<br>
+					NÃO HOUVE CRESCIMENTO DE BACTÉRIAS<br>
 				</p>
 				<h1>Avaliação</h1>
 				<br>
@@ -228,8 +318,37 @@
 				<h1>Plano</h1>
 				<br>
 				<p>
-					- ORIENTAÇÕES GERAIS E SINAIS DE ALARME;<br>
-					- ORIENTO RETORNO SE PERSISTÊNCIA OU SURGIMENTO DE NOVOS SINTOMAS.
+					=> ORIENTO:<br>
+					QUANTO AOS SINAIS DE ALERTA E SE ENCAMINHAR PARA O HOSPITAL MATERNO INFANTIL AUGUSTA BASTOS (HMIAB) CASO APRESENTE OS MESMOS;<br>
+					IMPORTÂNCIA DA INGESTA HÍDRICA, DIMINUIR O CONSUMO DE SAL E AÇÚCAR, ALIMENTAÇÃO SAUDÁVEL;<br>
+					MEDIDAS DE PREVENÇÃO AO COVID-19 E MOSQUITO AEDES AEGYPTI;<br>
+					IMPORTÂNCIA DA PARTICIPAÇÃO DO PARCEIRO NAS CONSULTAS DE PRÉ NATAL E REALIZAÇÃO DO PRÉ NATAL DO PARCEIRO;<br>
+					SOBRE PRÉ NATAL ODONTOLÓGICO E ENTREGUE FOLHETO IMPRESSO.<br>
+					ORIENTAÇÕES GERAIS;<br>
+					=> CHECO:<br>
+					-1° FASE TESTE DA MAMÃE<br>
+					-2° FASE TESTE DA MAMÃE<br>
+					-USG TRANSVAGINAL/OBSTÉTRICA<br>
+					-EXAMES LABORATORIAIS<br>
+					=> SOLICITO/AGUARDO RESULTADO:<br>
+					-1° FASE TESTE DA MAMÃE<br>
+					-2° FASE TESTE DA MAMÃE<br>
+					-USG TRANSVAGINAL/OBSTÉTRICA<br>
+					-EXAMES LABORATORIAIS<br>
+					=> REALIZO:<br>
+					- PREENCHIMENTO E ENTREGA DA CADERNETA DA GESTANTE;<br>
+					- COLETA DE MATERIAL;<br>
+					- TR SÍFILIS, HIV, HBV, HEPATITE C, AMBOS COM RESULTADOS NÃO REAGENTE;<br>
+					-1° FASE TESTE DA MAMÃE;<br>
+					-2° FASE TESTE DA MAMÃE;<br>
+					=> PRESCREVO:<br>
+					USO ORAL DE SULFATO FERROSO 40MG - 01 COMPRIMIDO AO DIA 30 MIN ANTES DO ALMOÇO COM SUCO DE LARANJA OU LIMÃO, FAZER USO ATÉ 3 MESES APÓS A GESTAÇÃO;<br>
+					ÁCIDO FÓLICO 5 MG - TOMAR 01 COMPRIMIDO ATÉ 12° SEMANA DE GESTAÇÃO;<br>
+					=> ENCAMINHO:<br>
+					- PARA SALA DE VACINA;<br>
+					- PARA CONSULTA ODONTOLÓGICA;<br>
+					- PARA CONSULTA NUTRICIONAL;<br>
+					=> RETORNO PARA CUIDADO CONTINUADO/PROGRAMADO EM .
 				</p>
 				<br>
 			`;
@@ -239,6 +358,7 @@
 		function showPEC_puericultura() {
 			hideAll();
 			document.getElementById("right").style.textAlign = "left";
+			document.getElementById("button_PEC_puericultura").style.backgroundColor = "#6F97C4";
 
 			document.getElementById("PEC_content").innerHTML = `
 			<br>
@@ -353,7 +473,21 @@
 					SOBRE ORIENTAÇÕES GERAIS E OS SINAIS DE ALERTA PARA RETORNO ANTECIPADO;<br>
 					QUE RETORNE PARA CONSULTA AGENDADA COM MÉDICO INTERCALADO COM ENFERMEIRO PARA CUIDADO CONTINUADO/PROGRAMADO.<br>
 					Conduta:<br>
-					Retorno para cuidado continuado / programado
+					Retorno para cuidado continuado / programado<br><br>
+					RESULTADO DE EXAMES NA PUERICULTURA<br>
+					TESTE DO PEZINHO - 0202110052<br>
+					TSH NEONATAL uU/mL<br>
+					FENILALANINA (PKU) mg/dL<br>
+					17OHP NEONATAL ng/mL<br>
+					IRT NEONATAL ng/mL<br>
+					HEMOGLOBINOPATIAS<br>
+					BIOTINIDASE NEONATAL<br>
+					TOXOPLASMOSE IGM NEONATAL<br>
+					OXIMETRIA DE PULSO (TESTE DO CORAÇÃOZINHO) - 0211020079<br>
+					MSD: SAT / FC bpm<br>
+					MID: SAT / FC bpm<br>
+					TESTE DA ORELHINHA (EOA) - 0211070149<br>
+					TESTE DO OLHINHO (TRV) -
 				</p>
 				<br>
 			`;
@@ -363,6 +497,7 @@
 		function showPEC_puerperio() {
 			hideAll();
 			document.getElementById("right").style.textAlign = "left";
+			document.getElementById("button_PEC_puerperio").style.backgroundColor = "#6F97C4";
 
 			document.getElementById("PEC_content").innerHTML = `
 				<br>
@@ -416,6 +551,7 @@
 
 		function showGuiaFarmaceutico() {
 			hideAll();
+			document.getElementById("button_GuiaFarmaceutico").style.backgroundColor = "#6F97C4";
 			document.getElementById("right").style.textAlign = "center";
 			document.getElementById("right").style.alignItems = "center";
 			document.getElementById("document_content").setAttribute("data", "./Files/guia-farmacêutico.pdf");
@@ -425,6 +561,7 @@
 
 		function showCID_10() {
 			hideAll();
+			document.getElementById("button_CID_10").style.backgroundColor = "#6F97C4";
 			document.getElementById("right").style.textAlign = "center";
 			document.getElementById("right").style.alignItems = "center";
 			document.getElementById("document_content").setAttribute("data", "./Files/CID-10.pdf");
@@ -434,6 +571,7 @@
 
 		function showCIAP_2() {
 			hideAll();
+			document.getElementById("button_CIAP_2").style.backgroundColor = "#6F97C4";
 			document.getElementById("right").style.textAlign = "center";
 			document.getElementById("right").style.alignItems = "center";
 			document.getElementById("document_content").setAttribute("data", "./Files/CIAP-2.pdf");
@@ -443,6 +581,7 @@
 
 		function showSIGTAP() {
 			hideAll();
+			document.getElementById("button_SIGTAP").style.backgroundColor = "#6F97C4";
 			document.getElementById("right").style.textAlign = "center";
 			document.getElementById("right").style.alignItems = "center";
 			document.getElementById("document_content").setAttribute("data", "./Files/SIGTAP.pdf");
@@ -452,6 +591,7 @@
 
 		function showMRPA() {
 			hideAll();
+			document.getElementById("button_MRPA").style.backgroundColor = "#6F97C4";
 			document.getElementById("right").style.textAlign = "center";
 			document.getElementById("right").style.alignItems = "center";
 			document.getElementById("document_content").setAttribute("data", "./Files/MRPA.pdf");
@@ -462,6 +602,7 @@
 		function showReceitaSOSGestante() {
 			hideAll();
 			document.getElementById("right").style.textAlign = "left";
+			document.getElementById("button_ReceitaSOSGestante").style.backgroundColor = "#6F97C4";
 
 			document.getElementById("PEC_content").innerHTML = `
 				<br>
@@ -505,6 +646,7 @@
 		function showReceitaDengue() {
 			hideAll();
 			document.getElementById("right").style.textAlign = "left";
+			document.getElementById("button_ReceitaDengue").style.backgroundColor = "#6F97C4";
 
 			document.getElementById("PEC_content").innerHTML = `
 				<br>
@@ -537,6 +679,10 @@
 				</ol>
 			`;
 			document.getElementById("PEC_content").style.display = "inline";
+		}
+
+		function redirect(url) {
+			window.open(url);
 		}
 	</script>
 </body>
