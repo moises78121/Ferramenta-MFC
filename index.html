@@ -95,9 +95,19 @@
 			<br>
 			<button id="button_MRPA" onclick="showMRPA()">MRPA</button>
 			<br>
+			<button id="button_inventario_ansiedade_beck" onclick="show_inventario_ansiedade_beck()">Inventário de Ansiedade de Beck</button>
+			<br>
+			<button id="button_inventario_depressao_beck" onclick="show_inventario_depressao_beck()">Inventário de Depressão de Beck</button>
+			<br>
+			<button id="button_escala_de_bristol" onclick="show_escala_de_bristol()">Escala de Bristol</button>
+			<br>
+			<button id="button_m_chat_rf" onclick="show_m_chat_rf()">M-CHAT-R/F (Autismo)</button>
+			<br>
 			<button id="button_ReceitaSOSGestante" onclick="showReceitaSOSGestante()">Receita SOS Gestante</button>
 			<br>
 			<button id="button_ReceitaDengue" onclick="showReceitaDengue()">Receita Dengue</button>
+			<br>
+			<button onclick="redirect('http\:\/\/departamentos.cardiol.br\/sbc-da\/2015\/CALCULADORAER2017\/index.html')">Calculadora Risco Cardiovascular</button>
 			<br>
 			<button onclick="redirect('https\:\/\/www.fetalmed.net\/calculadora\/calculadora-idade-gestacional\/')">Calculadora Idade Gestacional</button>
 			<br>
@@ -130,6 +140,10 @@
 			document.getElementById("button_CIAP_2").style.backgroundColor = "#FFCF81";
 			document.getElementById("button_SIGTAP").style.backgroundColor = "#FFCF81";
 			document.getElementById("button_MRPA").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_inventario_ansiedade_beck").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_inventario_depressao_beck").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_escala_de_bristol").style.backgroundColor = "#FFCF81";
+			document.getElementById("button_m_chat_rf").style.backgroundColor = "#FFCF81";
 			document.getElementById("button_ReceitaSOSGestante").style.backgroundColor = "#FFCF81";
 			document.getElementById("button_ReceitaDengue").style.backgroundColor = "#FFCF81";
 		}
@@ -599,6 +613,46 @@
 			document.getElementById("document_content").style.display = "inline";
 		}
 
+		function show_inventario_ansiedade_beck() {
+			hideAll();
+			document.getElementById("button_inventario_ansiedade_beck").style.backgroundColor = "#6F97C4";
+			document.getElementById("right").style.textAlign = "center";
+			document.getElementById("right").style.alignItems = "center";
+			document.getElementById("document_content").setAttribute("data", "./Files/inventário-ansiedade-beck.pdf");
+			document.getElementById("document_content_path").setAttribute("href", "./Files/inventário-ansiedade-beck.pdf");
+			document.getElementById("document_content").style.display = "inline";
+		}
+
+		function show_inventario_depressao_beck() {
+			hideAll();
+			document.getElementById("button_inventario_depressao_beck").style.backgroundColor = "#6F97C4";
+			document.getElementById("right").style.textAlign = "center";
+			document.getElementById("right").style.alignItems = "center";
+			document.getElementById("document_content").setAttribute("data", "./Files/inventário-depressao-beck.pdf");
+			document.getElementById("document_content_path").setAttribute("href", "./Files/inventário-depressao-beck.pdf");
+			document.getElementById("document_content").style.display = "inline";
+		}
+
+		function show_escala_de_bristol() {
+			hideAll();
+			document.getElementById("button_escala_de_bristol").style.backgroundColor = "#6F97C4";
+			document.getElementById("right").style.textAlign = "center";
+			document.getElementById("right").style.alignItems = "center";
+			document.getElementById("document_content").setAttribute("data", "./Files/escala-de-bristol.pdf");
+			document.getElementById("document_content_path").setAttribute("href", "./Files/escala-de-bristol.pdf");
+			document.getElementById("document_content").style.display = "inline";
+		}
+
+		function show_m_chat_rf() {
+			hideAll();
+			document.getElementById("button_m_chat_rf").style.backgroundColor = "#6F97C4";
+			document.getElementById("right").style.textAlign = "center";
+			document.getElementById("right").style.alignItems = "center";
+			document.getElementById("document_content").setAttribute("data", "./Files/m-chat-rf.pdf");
+			document.getElementById("document_content_path").setAttribute("href", "./Files/m-chat-rf.pdf");
+			document.getElementById("document_content").style.display = "inline";
+		}
+
 		function showReceitaSOSGestante() {
 			hideAll();
 			document.getElementById("right").style.textAlign = "left";
@@ -684,11 +738,6 @@
 		function redirect(url) {
 			window.open(url);
 		}
-
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-DZR4RRHERX');
 	</script>
 </body>
 </html>
