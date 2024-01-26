@@ -68,14 +68,18 @@ body {
 	position: absolute;
 	z-index: 999;
 	display: none;
-	max-height: 80vh;
+	max-height: 85vh;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
 
+/* Begin of scrollbar style */
+
 #navbar ul li .dropdown::-webkit-scrollbar {
-	width: 0px;
+	width: 1px;
 }
+
+/* End of scrollbar style */
 
 #navbar ul li p:hover,
 #navbar ul li ul li p:hover {
