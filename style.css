@@ -1,0 +1,132 @@
+/* Begin of navbar style */
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: monospace;
+}
+
+body {
+	padding-top: 5vw;
+	background: #6F97C4;
+}
+
+#navbar {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	text-align: center;
+}
+
+#navbar ul {
+	list-style: none;
+	background: #22438C;
+}
+
+#navbar ul li {
+	display: inline-block;
+	position: relative;
+}
+
+#navbar ul li p,
+#navbar ul li ul.dropdown li p
+ {
+	display: block;
+	width: 22vw;
+	padding-top: 1.5vw;
+	padding-bottom: 1.5vw;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.6vw;
+}
+
+#navbar ul li ul.dropdown li p {
+	cursor: pointer;
+}
+
+#navbar ul li a,
+#navbar ul li ul.dropdown li a
+ {
+	display: block;
+	width: 22vw;
+	padding-top: 1.5vw;
+	padding-bottom: 1.5vw;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.6vw;
+}
+
+#navbar ul li ul.dropdown li {
+	display: block;
+}
+
+#navbar ul li ul.dropdown {
+	width: 100%;
+	background: #22438C;
+	position: absolute;
+	z-index: 999;
+	display: none;
+}
+
+#navbar ul li p:hover,
+#navbar ul li ul li p:hover {
+	background: #112C66;
+}
+
+#navbar ul li ul li a:hover {
+	background: #112C66;
+}
+
+#navbar ul li:hover ul.dropdown {
+	display: block;
+}
+
+/* End of navbar style */
+
+/* Begin of content style */
+
+#page_content {
+	background: #FAEF9B;
+	border-radius: 1vw;
+	margin: 1vw;
+	font-size: 1.6vw;
+}
+
+#page_content #page_text_content h1 {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 2vw;
+}
+
+#page_content #page_text_content ol {
+	padding-top: 0px;
+	padding-bottom: 2vw;
+	margin: 0px;
+	padding-left: 8vw;
+}
+
+#page_content #page_text_content .title {
+	padding-top: 2vw;
+	color: #FF0000;
+}
+
+#page_content #page_text_content p {
+	margin: 0px;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
+	padding-left: 4vw;
+	padding-right: 4vw;
+}
+
+#page_content #page_document_content {
+	width: 98%;
+	height: 82vh;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
+	display: none;
+}
+
+/* End of content style */
