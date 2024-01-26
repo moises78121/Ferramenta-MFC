@@ -29,7 +29,7 @@ body {
 }
 
 #navbar ul li p,
-#navbar ul li ul.dropdown li p
+#navbar ul li .dropdown li p
  {
 	display: block;
 	width: 22vw;
@@ -41,12 +41,12 @@ body {
 	font-size: 1.6vw;
 }
 
-#navbar ul li ul.dropdown li p {
+#navbar ul li .dropdown li p {
 	cursor: pointer;
 }
 
 #navbar ul li a,
-#navbar ul li ul.dropdown li a
+#navbar ul li .dropdown li a
  {
 	display: block;
 	width: 22vw;
@@ -58,16 +58,23 @@ body {
 	font-size: 1.6vw;
 }
 
-#navbar ul li ul.dropdown li {
+#navbar ul li .dropdown li {
 	display: block;
 }
 
-#navbar ul li ul.dropdown {
+#navbar ul li .dropdown {
 	width: 100%;
 	background: #22438C;
 	position: absolute;
 	z-index: 999;
 	display: none;
+	max-height: 80vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#navbar ul li .dropdown::-webkit-scrollbar {
+	width: 0px;
 }
 
 #navbar ul li p:hover,
@@ -79,7 +86,7 @@ body {
 	background: #112C66;
 }
 
-#navbar ul li:hover ul.dropdown {
+#navbar ul li:hover .dropdown {
 	display: block;
 }
 
