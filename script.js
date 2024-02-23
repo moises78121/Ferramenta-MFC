@@ -639,7 +639,7 @@ function showReceitaDengue() {
 			<li>
 				DIPIRONA SÓDICA 1G_______________________01 CAIXA
 				<br>
-				TOMAR 01 CP DE 08/08 HORAS, SE DOR OU FEBRE.
+				TOMAR 01 CP DE 06/06 HORAS, SE DOR OU FEBRE.
 			</li>
 			<br>
 			<li>
