@@ -103,6 +103,8 @@ body {
 	border-radius: 1vw;
 	margin: 1vw;
 	font-size: 1.6vw;
+
+	text-align: left;
 }
 
 #page_content #page_text_content h1 {
