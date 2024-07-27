@@ -520,6 +520,15 @@ function showSIGTAP() {
 	clear_all();
 	document.getElementById("page_content").style.textAlign = "center";
 	document.getElementById("page_content").style.alignItems = "center";
+	document.getElementById("page_document_content").setAttribute("data", "./Files/tabela-sigtap-201904-formatada.txt");
+	document.getElementById("page_document_content_path").setAttribute("href", "./Files/tabela-sigtap-201904-formatada.txt");
+	document.getElementById("page_document_content").style.display = "inline";
+}
+
+function showSIGTAP2() {
+	clear_all();
+	document.getElementById("page_content").style.textAlign = "center";
+	document.getElementById("page_content").style.alignItems = "center";
 	document.getElementById("page_document_content").setAttribute("data", "./Files/SIGTAP.pdf");
 	document.getElementById("page_document_content_path").setAttribute("href", "./Files/SIGTAP.pdf");
 	document.getElementById("page_document_content").style.display = "inline";
