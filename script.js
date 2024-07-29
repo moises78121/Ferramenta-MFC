@@ -498,7 +498,17 @@ function showGuiaFarmaceutico() {
 	document.getElementById("page_document_content").style.display = "inline";
 }
 
+
 function showCID_10() {
+	clear_all();
+	document.getElementById("page_content").style.textAlign = "center";
+	document.getElementById("page_content").style.alignItems = "center";
+	document.getElementById("page_document_content").setAttribute("data", "./Files/lista-CID-10.txt");
+	document.getElementById("page_document_content_path").setAttribute("href", "./Files/lista-CID-10.txt");
+	document.getElementById("page_document_content").style.display = "inline";
+}
+
+function showCID_10_2() {
 	clear_all();
 	document.getElementById("page_content").style.textAlign = "center";
 	document.getElementById("page_content").style.alignItems = "center";
