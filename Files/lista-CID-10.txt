@@ -1,3 +1,28 @@
+• Capítulo 1  (A00 ― B99) - Doenças infecciosas e as causadas por parasitas;
+• Capítulo 2  (C00 ― D48) - Neoplasias e tumores;
+• Capítulo 3  (D50 ― D89) - Doenças do sangue;
+• Capítulo 4  (E00 ― E90) - Distúrbios endócrinos, nutricionais e metabólicas;
+• Capítulo 5  (F00 ― F99) - Transtornos mentais e comportamentais;
+• Capítulo 6  (G00 ― G99) - Doenças do Sistema Nervoso;
+• Capítulo 7  (H00 ― H59) - Doenças do olho e anexos;
+• Capítulo 8  (H60 ― H95) - Doenças do ouvido e da apófise mastoide;
+• Capítulo 9  (I00 ― I99) - Doenças do aparelho circulatório;
+• Capítulo 10 (J00 ― J99) - Doenças do aparelho respiratório;
+• Capítulo 11 (K00 ― K93) - Doenças do aparelho digestivo e bucais;
+• Capítulo 12 (L00 ― L99) - Doenças da pele e do tecido subcutâneo;
+• Capítulo 13 (M00 ― M99) - Doenças do sistema osteomuscular e do tecido conjuntivo;
+• Capítulo 14 (N00 ― N99) - Doenças do aparelho geniturinário;
+• Capítulo 15 (O00 ― O99) - Gravidez, parto e puerpério;
+• Capítulo 16 (P00 ― P96) - Algumas afecções originadas no período perinatal;
+• Capítulo 17 (Q00 ― Q99) - Malformações congênitas, deformidades e anomalias cromossômicas;
+• Capítulo 18 (R00 ― R99) - Sintomas, sinais e achados anormais de exames clínicos e de laboratório, não classificados em outra parte;
+• Capítulo 19 (S00 ― T98) - Lesões, envenenamento e algumas outras consequências de causas externas;
+• Capítulo 20 (V01 ― Y98) - Causas externas de morbidade e de mortalidade;
+• Capítulo 21 (Z00 ― Z99) - Fatores que influenciam o estado de saúde e o contato com os serviços de saúde;
+• Capítulo 22 (U00 ― U99) - Códigos para propósitos especiais.
+
+######################################################################################################
+
 A00 → Cólera
 A000 → Cólera devida a Vibrio cholerae 01, biótipo cholerae
 A001 → Cólera devida a Vibrio cholerae 01, biótipo El Tor
