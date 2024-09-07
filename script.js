@@ -20,12 +20,7 @@ function showPEC_demanda_espontanea() {
 			# RECEBO PACIENTE NA DEMANDA ESPONTÂNEA COM QP:<br>
 			==> HDA:<br>
 			==> HPP:<br>
-			***** AFIRMA: ;<br>
-			***** NEGA: ;<br>
-			***** MUC: ;<br>
-			***** NEGA ALERGIA MEDICAMENTOSA, COMORBIDADES, MUC;<br>
-			***** NEGA ETILISMO E TABAGISMO.<br>
-			==> HF: ;<hr>
+			NEGA ALERGIA MEDICAMENTOSA;<hr>
 		</p>
 		<h1>Objetivo</h1>
 		<br>
@@ -33,7 +28,7 @@ function showPEC_demanda_espontanea() {
 			# COVID:<br>
 			# INFLUENZA:<br><br>
 			# EXAME FÍSICO:<br>
-			==> BEG, BEN, LOTE, AAA, CORADA, HIDRATADA, EUPNEICA E EUCÁRDIACA<br>
+			==> BEG, BEN, LOTE, AAA, CORADO, HIDRATADO, EUPNEICO E EUCÁRDIACO<br>
 			==> OROSCOPIA: MUCOSA NORMOCORADA, AUSENCIA DE PLACAS, EDEMA E HIPEREMIA<br>
 			==> OTOSCOPIA: MEMBRANA TIMPÂNICA TRANSLÚCIDA, AUSÊNCIA DE ABAULAMENTO , HIPEREMIA<br>
 			==> ACV: RCR, BCNF EM 2T, S/SOPROS<br>
@@ -59,6 +54,98 @@ function showPEC_demanda_espontanea() {
 			# FOI EMITIDO UM ATESTADO MÉDICO PARA ACOMPANHANTE DE UM DIA NESTE ATENDIMENTO;<br>
 			# ORIENTAÇÕES GERAIS E SINAIS DE ALARME;<br>
 			# ORIENTO RETORNO SE PERSISTÊNCIA OU SURGIMENTO DE NOVOS SINTOMAS.
+		</p>
+		<br>
+	`;
+	document.getElementById("page_text_content").style.display = "inline";
+}
+
+function showPEC_consulta_agendada() {
+	clear_all();
+	document.getElementById("page_content").style.textAlign = "left";
+
+	document.getElementById("page_text_content").innerHTML = `
+		<center><h1 class="title">PEC Consulta Agendada</h1></center>
+		<br>
+		<h1>Subjetivo</h1>
+		<br>
+		<p>
+			# ATENDIMENTO REALIZADO PELO(A) ACADÊMICO(A)<br>
+			# RECEBO PACIENTE EM CONSULTA AGENDADA COM QP:<br>
+			==> HDA:<br>
+			==> HPP:<br>
+			***** AFIRMA: ;<br>
+			***** NEGA: ;<br>
+			***** MUC: ;<br>
+			***** NEGA ALERGIA MEDICAMENTOSA, COMORBIDADES, MUC;<br>
+			***** NEGA ETILISMO E TABAGISMO.<br>
+			==> HF: ;<hr>
+		</p>
+		<h1>Objetivo</h1>
+		<br>
+		<p>
+			# COVID:<br>
+			# INFLUENZA:<br><br>
+			# EXAME FÍSICO:<br>
+			==> BEG, BEN, LOTE, AAA, CORADO, HIDRATADO, EUPNEICO E EUCÁRDIACO<br>
+			==> OROSCOPIA: MUCOSA NORMOCORADA, AUSENCIA DE PLACAS, EDEMA E HIPEREMIA<br>
+			==> OTOSCOPIA: MEMBRANA TIMPÂNICA TRANSLÚCIDA, AUSÊNCIA DE ABAULAMENTO , HIPEREMIA<br>
+			==> ACV: RCR, BCNF EM 2T, S/SOPROS<br>
+			==> AR: MV+, S/ RA<br>
+			==> ABD: FLÁCIDO, RHA +, INDOLOR A PALPAÇÃO SUPERFICIAL E PROFUNDA, AUSÊNCIA DE VCM E MASSAS PALPÁVEIS, DB-;<br>
+			==> EXTREMIDADES: PULSOS PRESENTES, AMPLOS E SIMÉTRICOS, TEC &lt; 3 SEG<br>
+			==> NEURO: GLASGOW 15, PUPILAS ISOFOTORREAGENTES.<br><br>
+			==> DU: SEM QUEIXAS<br>
+			==> TV: NI<hr>
+		</p>
+		<h1>Avaliação</h1>
+		<br>
+		<p>
+			# SINAIS E SINTOMAS SUGESTIVOS DE<hr>
+		</p>
+		<h1>Plano</h1>
+		<br>
+		<p>
+			# SOLICITO REALIZAÇÃO DE MRPA;<br>
+			# SOLICITO REALIZAÇÃO DE CONTROLE GLICÊMICO;<br>
+			# ORIENTO RETORNO EM CONSULTA AGENDADA PARA AVALIAÇÃO DE MRPA;<br>
+			# ORIENTO RETORNO EM CONSULTA AGENDADA PARA AVALIAÇÃO DE CONTROLE GLICÊMICO;<br>
+			# FOI EMITIDO UM ATESTADO MÉDICO PARA ACOMPANHANTE DE UM DIA NESTE ATENDIMENTO;<br>
+			# ORIENTAÇÕES GERAIS E SINAIS DE ALARME;<br>
+			# ORIENTO RETORNO SE PERSISTÊNCIA OU SURGIMENTO DE NOVOS SINTOMAS.
+		</p>
+		<br>
+	`;
+	document.getElementById("page_text_content").style.display = "inline";
+}
+
+function showPEC_evasão() {
+	clear_all();
+	document.getElementById("page_content").style.textAlign = "left";
+
+	document.getElementById("page_text_content").innerHTML = `
+		<center><h1 class="title">PEC Evasão</h1></center>
+		<br>
+		<h1>Subjetivo</h1>
+		<br>
+		<p>
+			# PACIENTE NÃO RESPONDEU AOS CHAMADOS<hr>
+		</p>
+		<h1>Objetivo</h1>
+		<br>
+		<p>
+			# NÃO AVALIADO<hr>
+		</p>
+		<h1>Avaliação</h1>
+		<br>
+		<p>
+			# NÃO AVALIADO<br><br>
+			# CID-10: Z532<hr>
+		</p>
+		<h1>Plano</h1>
+		<br>
+		<p>
+			# NÃO AVALIADO
 		</p>
 		<br>
 	`;
@@ -665,6 +752,38 @@ function showReceitaDengue() {
 				RECOMENDAÇÕES:
 				<br>
 				TOMAR DURANTE O DIA 2,5 L DE LÍQUIDOS (ÁGUA, SUCO OU ÁGUA DE COCO) DURANTE 5 DIAS.
+			</li>
+		</ol>
+	`;
+	document.getElementById("page_text_content").style.display = "inline";
+}
+
+function showReceitaGastroenterite() {
+	clear_all();
+	document.getElementById("page_content").style.textAlign = "left";
+
+	document.getElementById("page_text_content").innerHTML = `
+		<center><h1 class="title">Receita Dengue</h1></center>
+		<br>
+		<h1>Uso oral:</h1>
+		<br>
+		<ol>
+			<li>
+				SRO 27,9G________________________________08 SACHÊS
+				<br>
+				DILUIR 1 SANCHES EM 1 LITROS DE ÁGUA FILTRADA OU FERVIDA. TOMAR 200 ML APÓS CADA EVACUAÇÃO.
+			</li>
+			<br>
+			<li>
+				SACCHAROMYCES BOULARDII-17 100 MG________01 CAIXA
+				<br>
+				TOMAR 01 CP DE 12/12 HORAS DURANTE 7 DIAS.
+			</li>
+			<br>
+			<li>
+				RACECADOTRILA 100 MG_____________________01 CAIXA
+				<br>
+				TOMAR 01 CP DE 08/08 HORAS DURANTE 5 DIAS.
 			</li>
 		</ol>
 	`;
