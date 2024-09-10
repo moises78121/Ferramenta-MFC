@@ -631,7 +631,25 @@ function showSIGTAP2() {
 	document.getElementById("page_document_content").style.display = "inline";
 }
 
-function showMRPA() {
+function showMRPA_Bandeirantes() {
+	clear_all();
+	document.getElementById("page_content").style.textAlign = "center";
+	document.getElementById("page_content").style.alignItems = "center";
+	document.getElementById("page_document_content").setAttribute("data", "./Files/mapa-pressão.pdf");
+	document.getElementById("page_document_content_path").setAttribute("href", "./Files/mapa-pressão.pdf");
+	document.getElementById("page_document_content").style.display = "inline";
+}
+
+function showMapaGlicemico_Bandeirantes() {
+	clear_all();
+	document.getElementById("page_content").style.textAlign = "center";
+	document.getElementById("page_content").style.alignItems = "center";
+	document.getElementById("page_document_content").setAttribute("data", "./Files/mapa-glicemia.pdf");
+	document.getElementById("page_document_content_path").setAttribute("href", "./Files/mapa-glicemia.pdf");
+	document.getElementById("page_document_content").style.display = "inline";
+}
+
+function showMRPA_Benjamin() {
 	clear_all();
 	document.getElementById("page_content").style.textAlign = "center";
 	document.getElementById("page_content").style.alignItems = "center";
