@@ -649,6 +649,15 @@ function showMapaGlicemico_Bandeirantes() {
 	document.getElementById("page_document_content").style.display = "inline";
 }
 
+function showTabelaMedicamentos() {
+	clear_all();
+	document.getElementById("page_content").style.textAlign = "center";
+	document.getElementById("page_content").style.alignItems = "center";
+	document.getElementById("page_document_content").setAttribute("data", "./Files/tabela-medicamentos.pdf");
+	document.getElementById("page_document_content_path").setAttribute("href", "./Files/tabela-medicamentos.pdf");
+	document.getElementById("page_document_content").style.display = "inline";
+}
+
 function showMRPA_Benjamin() {
 	clear_all();
 	document.getElementById("page_content").style.textAlign = "center";
