@@ -667,6 +667,15 @@ function showMRPA_Benjamin() {
 	document.getElementById("page_document_content").style.display = "inline";
 }
 
+function showLME() {
+	clear_all();
+	document.getElementById("page_content").style.textAlign = "center";
+	document.getElementById("page_content").style.alignItems = "center";
+	document.getElementById("page_document_content").setAttribute("data", "./Files/LME.pdf");
+	document.getElementById("page_document_content_path").setAttribute("href", "./Files/LME.pdf");
+	document.getElementById("page_document_content").style.display = "inline";
+}
+
 function show_inventario_ansiedade_beck() {
 	clear_all();
 	document.getElementById("page_content").style.textAlign = "center";
